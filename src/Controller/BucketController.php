@@ -21,14 +21,14 @@ class BucketController extends AbstractController
             'wishes' => $wishes
         ]);
     }
+
     /**
      * @Route("/detail/{id}", name="detail")
      */
     public function detail(Wish $wish): Response
     {
-       dd($wish);
         return $this->render('bucket/detail.html.twig', [
-            'wishes' => '??'
+            'wish' => $wish
         ]);
     }
     

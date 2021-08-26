@@ -14,7 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class WishController extends AbstractController
 {
     
-
      /**
      * @Route("/admin/ajouter", name="ajouter")
      */
@@ -30,12 +29,24 @@ class WishController extends AbstractController
             $em->persist($wish);
             $em->flush();
             // a faire plus tard rediriger vers la home du BO /admin
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('admin');
 
         }
         return $this->render('wish/ajouter.html.twig',
         [ 'formWish' => $formWish->createView() ]);
     }
 
+    /**
+     * @Route("/admin/delete/{id}", name="delete")
+     */
+    public function delete(int $id, EntityManagerInterface $em, WishRepository $wishRepository): Response
+    {
+        $wish = $wishRepository->findBy(['id' => $id]);
 
+        $em->remove($wish[0]);
+        $em->flush();
+
+
+        return $this->redirectToRoute('home');
+    }
 }

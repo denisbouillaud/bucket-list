@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Back Office | {{ parent() }}{% endblock %}
+
+{% block central %}
+<h1>Back Office</h1>
+    <ul>
+        <li>
+            <a href="{{ path('ajouter')}}">Ajouter</a>
+        </li>
+    </ul>
+   <br><br><br>
+{% endblock %}

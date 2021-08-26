@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Détail | {{ parent() }}{% endblock %}
+
+{% block central %}
+<h1>Détail</h1>
+  
+  <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Titre</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date de création</th>
+            <th scope="col">est publiée</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr scope="row">  
+          <td>{{ wish.title }}</td>
+          <td>{{ wish.description }}</td>
+          <td>{{ wish.dateCreated|date("m/d/Y H:i:s") }}</td>
+          <td>{{ wish.isPublished }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-danger"> <a href="{{ path('delete', {'id': wish.id }) }}">Supprimer</button>
+  
+   <br><br><br>
+{% endblock %}

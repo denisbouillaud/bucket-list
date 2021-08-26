@@ -6,9 +6,8 @@
 <h1>Bucket List</h1>
     <ul>
     {% for w in wishes %}
-        <li>{{w.id}} {{ w.title }}  {{ w.dateCreated|date("m/d/Y H:i:s") }}</li>
+        <li>{{w.id}} {{ w.title }}  {{ w.dateCreated|date("m/d/Y H:i:s") }} <a href="{{ path('detail', {'id': w.id }) }}">Detail</a></li>
     {% endfor %}
     </ul>
-  {#w.date|format_datetime() "#}
    <br><br><br>
 {% endblock %}

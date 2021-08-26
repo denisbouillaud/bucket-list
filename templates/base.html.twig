@@ -29,9 +29,9 @@
                 <a class="nav-link {% if route_name == 'home' %}active{% endif %}" aria-current="page" href="{{ path('home')}}">Home</a></li>
                 <li class="nav-item">
                 <a class="nav-link  {% if route_name == 'about_us' %}active{% endif %}" href="{{ path('about_us')}}">About Us</a></li>
-
+                <li class="nav-item">
+                <a class="nav-link  {% if route_name == 'admin' %}active{% endif %}" href="{{ path('admin')}}">Admin</a></li>
             </ul>
-            {{ route_name}}
         </div>
     </div>
 </nav>
