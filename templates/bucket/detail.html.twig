@@ -12,6 +12,7 @@
             <th scope="col">Description</th>
             <th scope="col">Date de création</th>
             <th scope="col">est publiée</th>
+            <th scope="col">catégorie</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
           <td>{{ wish.description }}</td>
           <td>{{ wish.dateCreated|date("m/d/Y H:i:s") }}</td>
           <td>{{ wish.isPublished }}</td>
+          <td>{{ wish.Category.name }}</td>
       </tr>
     </tbody>
   </table>
